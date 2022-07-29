@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 // load inquirer module (npm package)
 const inquirer = require('inquirer');
 
@@ -8,7 +7,7 @@ const fs = require('fs');
 // link to generateMarkdown.js for generating markdown from user input
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+// create an array of questions for user input
 const questions = [
     {   // GitHub username
         type: 'input',
@@ -265,7 +264,7 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// write README file
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(fileName, data, err => {
