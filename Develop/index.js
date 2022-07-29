@@ -8,7 +8,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const questions = [
     {   // Project Title
         type: 'input',
-        name: 'name',
+        name: 'title',
         message: 'What is your project title?',
         validate: nameInput => {
             if (nameInput) {
@@ -18,6 +18,11 @@ const questions = [
                 return false;
             };
         }
+    },
+    {   // Project Description
+        type: 'input',
+        name: 'description',
+        message: 'Please enter a description of your project.'
     }
 ];
 
@@ -32,12 +37,13 @@ function init() {
         // use user input to generate markdown for the README file
         .then(readmeData => {
             console.log(readmeData);
-            // return generateMarkdown(readmeData);
+            return generateMarkdown(readmeData);
         })
         // create README.md using the generated markdown
-        // .then(readmeMarkdown => {
-        //     return writeToFile('./output/README.md', readmeMarkdown);
-        // })
+        .then(readmeMarkdown => {
+            console.log(readmeMarkdown);
+            // return writeToFile('./output/README.md', readmeMarkdown);
+        })
         // handle errors
         .catch(err => {
             console.log(err);
