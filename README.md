@@ -20,6 +20,8 @@ Utilizing this app is simple with Node.js:
 
 5. Once you have answered all of the questions, you should get a message that a README.md file has been created successfully. You can find it by running `cd output` to access the output directory and then opening `README.md` in your preferred code editor.
 
+[You can watch a quick walkthrough of the app here](https://watch.screencastify.com/v/zSrpEq7cvxkc34a1lCrM). The README file generated in the video is saved in the repo as [sample/README.md](./sample/README.md).
+
 ## Contact
 
 Brett Piper
