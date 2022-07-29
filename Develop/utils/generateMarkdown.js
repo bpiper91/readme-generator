@@ -159,39 +159,34 @@ const licenseData = [
 ]
 
 // return a license badge based on the user-selected license
-function renderLicenseBadge(licenseIndex) {
-  if (licenseIndex) {
+function renderLicenseBadge(num) {
+  if (num) {
     return `
-${licenseData[licenseIndex].badge}
+${licenseData[num].badge}
 `;
   } else {
     return '';
   };
 };
 
-// return the license link
-function renderLicenseLink(licenseIndex) {
-  return licenseData[licenseIndex].link;
-};
-
 // generate the license section of README
-function renderLicenseSection(license) {
-  if (license) {
+function renderLicenseSection(num) {
+  if (num) {
   // if there is a license, add the section to the page
     return `
 
 ## License
     
-This project is licensed under [${licenseData[data.licenseIndex].license}](${renderLicenseLink(data.licenseIndex)}).`
+This project is licensed under [${licenseData[num].license}](${licenseData[num].link}).`
   } else {
     // if there is no license, return an empty string
     return "";
   };
 };
 
-// if there is a license, add it to the table of contents
-function renderLicenseTOC(licenseIndex) {
-  if (licenseIndex) {
+// if there is a license, add a link to the table of contents
+function renderLicenseTOC(num) {
+  if (num) {
     return `
 - [License](#license)`;
   } else {
@@ -201,43 +196,58 @@ function renderLicenseTOC(licenseIndex) {
 
 // generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-${renderLicenseBadge(data.licenseIndex)}
+  console.log(data);
+  // deconstruct data
+  const {
+    github,
+    email,
+    title,
+    description,
+    licenseIndex,
+    installation,
+    usage,
+    contribution,
+    test,
+    reach
+  } = data;
+
+  return `# ${title}
+${renderLicenseBadge(licenseIndex)}
 ## Description
 
-${data.description}
+${description}
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)${renderLicenseTOC(data.licenseIndex)}
+- [Usage](#usage)${renderLicenseTOC(licenseIndex)}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 
 ## Installation
 
-${data.installation}
+${installation}
 
 ## Usage
 
-${data.usage}${renderLicenseSection(data.licenseIndex)}
+${usage}${renderLicenseSection(licenseIndex)}
 
 ## Contributing
 
-${data.contribution}
+${contribution}
 
 ## Tests
 
-${data.test}
+${test}
 
 ## Questions
 
-GitHub: [${data.github}](https://github.com/${data.github})
+GitHub: [${github}](https://github.com/${github})
 
-Email address: ${data.email}
+Email: ${email}
 
-${data.reach}
+${reach}
 `;
 }
 

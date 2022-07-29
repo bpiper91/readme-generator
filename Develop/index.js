@@ -62,6 +62,13 @@ const questions = [
             };
         }
     },
+    {
+        // license check
+        type: 'confirm',
+        name: 'licenseCheck',
+        message: 'Would you like to add a license?',
+        default: false
+    },
     {   // license
         type: 'list',
         name: 'licenseIndex',
