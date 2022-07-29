@@ -161,9 +161,7 @@ const licenseData = [
 // return a license badge based on the user-selected license
 function renderLicenseBadge(num) {
   if (num) {
-    return `
-${licenseData[num].badge}
-`;
+    return `\n${licenseData[num].badge}\n`;
   } else {
     return '';
   };
@@ -187,8 +185,7 @@ This project is licensed under [${licenseData[num].license}](${licenseData[num].
 // if there is a license, add a link to the table of contents
 function renderLicenseTOC(num) {
   if (num) {
-    return `
-- [License](#license)`;
+    return `\n- [License](#license)`;
   } else {
     return "";
   };
@@ -196,7 +193,6 @@ function renderLicenseTOC(num) {
 
 // generate markdown for README
 function generateMarkdown(data) {
-  console.log(data);
   // deconstruct data
   const {
     github,
@@ -245,7 +241,7 @@ ${test}
 
 GitHub: [${github}](https://github.com/${github})
 
-Email: ${email}
+Email: [${email}](mailto:${email})
 
 ${reach}
 `;

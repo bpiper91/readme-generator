@@ -13,7 +13,7 @@ const questions = [
     {   // GitHub username
         type: 'input',
         name: 'github',
-        message: 'Please enter your GitHub username. (Required)',
+        message: 'Please enter your GitHub username.',
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -26,7 +26,7 @@ const questions = [
     {   // email address
         type: 'input',
         name: 'email',
-        message: 'Please enter your email address. (Required)',
+        message: 'Please enter your email address.',
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -39,7 +39,7 @@ const questions = [
     {   // project title
         type: 'input',
         name: 'title',
-        message: 'Please enter your project title. (Required)',
+        message: 'Please enter your project title.',
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -52,7 +52,7 @@ const questions = [
     {   // project description
         type: 'input',
         name: 'description',
-        message: 'Please enter a description of your project. (Required)',
+        message: 'Please enter a description of your project.',
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -201,27 +201,67 @@ const questions = [
     {   // installation instructions
         type: 'input',
         name: 'installation',
-        message: 'How should others install your project?'
+        message: 'How should others install your project?',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please provide installation instructions.');
+                return false;
+            };
+        }
     },
     {   // usage information
         type: 'input',
         name: 'usage',
-        message: 'How should others use your project?'
+        message: 'How should others use your project?',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please proivde usage instructions.');
+                return false;
+            };
+        }
     },
     {   // contribution guidelines
         type: 'input',
         name: 'contribution',
-        message: 'How can others contribute to the project?'
+        message: 'How can others contribute to the project?',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please provide contribution instructions.');
+                return false;
+            };
+        }
     },
     {   // test instructions
         type: 'input',
         name: 'test',
-        message: 'How can others test the project?'
+        message: 'How can others test the project?',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please provide testing instructions.');
+                return false;
+            };
+        }
     },
     {   // how to reach you with questions
         type: 'input',
         name: 'reach',
-        message: 'How should others reach you with questions?'
+        message: 'How should others reach you with questions?',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please provide instructions for contacting you.');
+                return false;
+            };
+        }
     }
 ];
 
