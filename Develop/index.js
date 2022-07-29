@@ -62,19 +62,16 @@ const questions = [
             };
         }
     },
-    {
-        // license check
-        type: 'confirm',
-        name: 'licenseCheck',
-        message: 'Would you like to add a license?',
-        default: false
-    },
     {   // license
         type: 'list',
         name: 'licenseIndex',
         message: 'Please select the appropriate license.',
         choices: [
-            // any change to this array needs to be reflected in the one used by generateMarkdown.js
+            // values below are used as indices for reference array in generateMarkdown.js
+            {
+                name: 'No License (License section will be omitted)',
+                value: false
+              },
             {
                 name: 'Apache License 2.0',
                 value: 0
